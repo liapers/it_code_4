@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Kino</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="header-navigation">
+                <div class="header-nav">
+                    <ul class="header-list flex">
+                        <li class="header-list-item">
+                            <a href="#popular" class="links header-link">Популярное на кинопоиске</a>
+                        </li>
+                        <li class="header-list-item">
+                            <a href="#new" class="links header-link">Поиск</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section id="popular" class="popular flex">
+                <h2 class="title">Популярное на кинопоиске</h2>
+                <div class="popular-films">
+                    <ul id="popular-list" class="popular-list flex">
+                    </ul>
+                </div>
+                <div id="buttons"></div>
+            </section>
+            <section id="new" class="new flex">
+                <h2 class="title">Поиск</h2>
+                <input id="search" type="text" placeholder="Введите название фильма">
+                <button id="btnSearch" >Поискать фильм</button>
+                <div class="popular-films">
+                    <ul id="searchFilms" class="popular-list flex">
+
+                    </ul>
+                </div>
+
+            </section>
+            <script src="./js/script.js"></script>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

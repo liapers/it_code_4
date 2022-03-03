@@ -1,0 +1,123 @@
+/*Общие стили*/
+
+body {
+  font-family: Arial, Verdana, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+.container {
+  margin: 0 auto;
+  width: 1170px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  list-style-type: none;
+}
+
+ul {
+  margin-left: 0; /* Отступ слева в браузере IE и Opera */
+  padding-left: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
+  padding-top: 20px;
+  margin-bottom: 0;
+}
+
+.title {
+  font-size: 36px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+/*шапка*/
+
+header {
+  background-color: black;
+}
+
+.header-navigation {
+  padding: 50px 0px;
+  margin-bottom: 70px;
+  font-weight: bold;
+  font-size: 36px;
+  color: chocolate;
+}
+
+.header-nav {
+  align-items: center;
+}
+
+.header-list {
+  margin: 0;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header-link:hover {
+  text-decoration: underline;
+}
+
+/*Популярные фильм*/
+
+.popular-list {
+    flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.popFilm {
+  width: 30%;
+  margin-right: 20px;
+  /* justify-content: center; */
+}
+
+.film {
+
+  background: #000; /* У блока, оборачивающего картинку при наведении будет просвечивать черный фон */
+  overflow: hidden; /* Ограничиваем видиую область */
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+
+.popFilm-img {
+  opacity: 1;
+  transition: opacity 124ms linear, transform 124ms linear; /* Плавное изменение прозрачности и увеличения */
+  width: 100%;
+  /* height: 400px; */
+  display: block; /* Убираем полосу под картинкий */
+}
+.popFilm:hover .film .popFilm-img {
+  opacity: 0.9; /* Высветляем картинку, но она становится темнее, так как под ней черный фон */
+  transform: scale(1.05); /* Увеличение картинки */
+}
+.popFilm + .popFilm .film {
+  background: #fff; /* Если необходимо высветление картинки при наведении, оборачивающий div должен иметь белый фон */
+}
+
+#buttons{
+    align-self: center;
+}
+.btn-pag {
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  color: #fff;
+  background-color: chocolate;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
