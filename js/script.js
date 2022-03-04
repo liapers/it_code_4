@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 //массив фильмов
 let arrFilms = [];
+/*ограничиваем страницу*/
 const onPage = 6;
 let topFilm = document.querySelector(".popular-list");
 
@@ -18,7 +19,7 @@ function getFilms() {
     .then((json) => showTopFilms(json))
     .catch((err) => console.log(err));
 }
-
+/*первая страница и вырисовывание кнопок**/
 function showTopFilms(promise) {
   arrFilms.push(promise.films);
   console.log(arrFilms[0]);
@@ -35,7 +36,7 @@ function showTopFilms(promise) {
     </li>`;
   }
 }
-
+/*заполянем остальные страницы и даемпонять, чтобы на клике менялось*/
 document.body.addEventListener("click", (e) => {
   if (!e.target.matches(".btn-pag")) return;
   topFilm.innerHTML = "";
@@ -60,10 +61,9 @@ let btnSearch = document.querySelector("#btnSearch");
 btnSearch.addEventListener("click", () => {
   getFilmbyName();
 });
-
+/*получаем список фильмов по ключевым словам*/
 function getFilmbyName() {
   let search = document.querySelector("#search");
-  //ПОЧЕМУ-ТО ВЫДАЕТ ОШИБКИ ПРИ ВСТАВКЕ ЗНАЧЕНИЯ ВАЛЬЮ Я НЕ СМОГЛА С ЭТИМ БОРОТЬСЯ 
   fetch(
     `https://kinopoiskapiunofficial.tech/api/v2.2/films?order=YEAR&type=FILM&ratingFrom=0&ratingTo=10&yearFrom=1000&yearTo=3000&keyword=${search.value}&page=1`,
     {
@@ -82,9 +82,11 @@ function getFilmbyName() {
 function outputFilm(film){ 
     console.log(film) 
     let listSearch= document.querySelector("#searchFilms")
+    /*очищаем ранее найденые фильмы*/
     while (listSearch.firstChild){ 
         listSearch.removeChild(listSearch.firstChild)
         }
+        /*выводим найденые фильмы/сериалы*/
     for (let i = 0; i < 6; i++) {
         listSearch.innerHTML += `<li class="popFilm flex">
         <div class="film" >
