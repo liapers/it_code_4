@@ -65,7 +65,7 @@ function getFilmbyName() {
   let search = document.querySelector("#search");
   //ПОЧЕМУ-ТО ВЫДАЕТ ОШИБКИ ПРИ ВСТАВКЕ ЗНАЧЕНИЯ ВАЛЬЮ Я НЕ СМОГЛА С ЭТИМ БОРОТЬСЯ 
   fetch(
-    `https://kinopoiskapiunofficial.tech/api/v2.2/films?order=YEAR&type=FILM&ratingFrom=0&ratingTo=10&yearFrom=1000&yearTo=3000&keyword=мстители&page=1`,
+    `https://kinopoiskapiunofficial.tech/api/v2.2/films?order=YEAR&type=FILM&ratingFrom=0&ratingTo=10&yearFrom=1000&yearTo=3000&keyword=${search.value}&page=1`,
     {
       method: "GET",
       headers: {
@@ -82,6 +82,9 @@ function getFilmbyName() {
 function outputFilm(film){ 
     console.log(film) 
     let listSearch= document.querySelector("#searchFilms")
+    while (listSearch.firstChild){ 
+        listSearch.removeChild(listSearch.firstChild)
+        }
     for (let i = 0; i < 6; i++) {
         listSearch.innerHTML += `<li class="popFilm flex">
         <div class="film" >

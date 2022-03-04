@@ -121,3 +121,24 @@ header {
   margin-right: 10px;
   cursor: pointer;
 }
+
+
+/*Меню с поиском*/
+
+.search-menu{
+    flex-direction: row;
+}
+#search{
+    width: 80%;
+    height: 40px;
+    border: 5px solid chocolate;
+    margin-right: 10px;
+}
+
+.btnSearch{
+    background-color: chocolate;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 20px;
+}
