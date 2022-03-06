@@ -6,12 +6,13 @@ let arrFilms = [];
 /*ограничиваем страницу*/
 const onPage = 6;
 let topFilm = document.querySelector(".popular-list");
+let btnSearch = document.querySelector("#btnSearch");
 
 function getFilms() {
   fetch("https://kinopoiskapiunofficial.tech/api/v2.2/films/top", {
     method: "GET",
     headers: {
-      "X-API-KEY": "51441db6-2864-4273-9781-63813a61ec2e",
+      "X-API-KEY": process.env.KEY,
       "Content-Type": "application/json",
     },
   })
@@ -56,8 +57,6 @@ document.body.addEventListener("click", (e) => {
 
 //получаем список фильмов по ключевым словам
 
-let btnSearch = document.querySelector("#btnSearch");
-
 btnSearch.addEventListener("click", () => {
   getFilmbyName();
 });
@@ -69,7 +68,7 @@ function getFilmbyName() {
     {
       method: "GET",
       headers: {
-        "X-API-KEY": "51441db6-2864-4273-9781-63813a61ec2e",
+        "X-API-KEY": process.env.KEY,
         "Content-Type": "application/json",
       },
     }
